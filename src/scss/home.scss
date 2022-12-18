@@ -1,3 +1,32 @@
 //====================================================================================================
 
+.main-section {
+
+   &__container {
+      display: grid;
+      min-height: 100vh;
+      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   &__content {}
+
+   &__title {
+      &:not(:last-child) {
+         margin-bottom: rem(32);
+      }
+   }
+
+   &__text {
+      &:not(:last-child) {
+         margin-bottom: rem(40);
+      }
+   }
+
+   &__image {
+      //margin: 0 0 0 auto;
+      justify-self: end;
+   }
+}
+
 //====================================================================================================

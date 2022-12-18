@@ -1,1 +1,51 @@
 // Заголовки, загальні БЕМ блоки та інше...
+
+.page {
+
+   &__main {}
+}
+
+.title {
+
+   &__label {
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: rem(12);
+      line-height: 24px;
+      letter-spacing: em(7.5, 12);
+      color: $greycolor;
+      display: flex;
+      align-items: center;
+      gap: rem(16);
+      &::before{
+         content:'';
+         width: rem(16);
+         height: rem(2);
+         background-color: #D9D9D9;
+      }
+      &:not(:last-child) {
+         margin-bottom: em(9, 12);
+      }
+   }
+}
+
+.tilte {
+
+   &__value {
+      font-family: "Plus Jakarta Sans";
+      font-weight: 700;
+      font-size: rem(36);
+      line-height: 1.25;
+      span{
+         color: $purpleColor;
+      }
+      &_big {
+         font-size: rem(44);
+         line-height: math.div(55, 44);
+      }
+   }
+}
+
+.text {
+   line-height: math.div(32, 16);
+}
