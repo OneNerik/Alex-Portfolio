@@ -10,6 +10,11 @@
    &__services {}
 }
 
+.page {
+
+   &__portfolio {}
+}
+
 .title {
 
    &__label {
@@ -56,6 +61,23 @@
    p {
       &:not(:last-child) {
          margin-bottom: rem(15);
+      }
+   }
+}
+
+.category-link {
+   display: inline-block;
+   border: 1px solid #f1f1f1;
+   border-radius: rem(4);
+   color: $greycolor;
+   font-size: rem(12);
+   padding: rem(4) rem(8);
+   line-height: math.div(15, 12);
+   @media (any-hover: hover){
+      &:hover{
+         color: #fff;
+         background-color: $purpleColor;
+         border: rem(1) solid $purpleColor;
       }
    }
 }
