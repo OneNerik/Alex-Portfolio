@@ -177,12 +177,19 @@
       justify-content: space-between;
       align-items: center;
       @include adaptiveValue("margin-bottom", 144, 30);
+      @media (max-width: em(600)){
+         align-items: stretch;
+         flex-direction: column;
+      }
    }
 
    &__controls {
       display: flex;
       align-items: center;
       gap: rem(16);
+      @media (max-width: em(600)){
+         justify-content: center;
+      }
    }
 
    &__arrow {
@@ -212,7 +219,12 @@
 
 .portfolio {
 
-   &__slider {}
+   &__slider {
+      @media (max-width: em(650)){
+         margin-right: rem(-15);
+         padding-right: rem(15);
+      }
+   }
 
    &__wrapper {}
 
@@ -249,14 +261,16 @@
             }
          }
       }
+      @media (any-hover: none){
+         opacity: 1;
+      }
    }
 
    &__body {
       padding: rem(24);
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: rem(16);
-      align-items: center;
    }
 
    &__title {
@@ -273,6 +287,12 @@
             color: $purpleColor;
          }
       }
+   }
+
+   &__footer {
+      display: flex;
+      align-items: center;
+      gap: rem(16);
    }
 
    &__category {}
