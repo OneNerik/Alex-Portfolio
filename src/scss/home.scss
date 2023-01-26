@@ -542,3 +542,33 @@
 }
 
 //====================================================================================================
+
+.testimonials {
+
+   &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: rem(80);
+      padding-bottom: rem(30);
+   }
+
+   &__title {
+      @include adaptiveValue("margin-bottom", 132, 70);
+   }
+
+   &__items {}
+
+   &__item {}
+}
+
+.item-testimonials {
+
+   &__avatar {}
+
+   &__text {}
+
+   &__name {}
+
+   &__profession {}
+}
