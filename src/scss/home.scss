@@ -608,3 +608,131 @@
       align-self: flex-start;
    }
 }
+
+//====================================================================================================
+
+.skills {
+
+   &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: rem(80);
+      padding-bottom: rem(30);
+   }
+
+   &__title {
+      @include adaptiveValue("margin-bottom", 112, 30);
+   }
+
+   &__body {
+      display: grid;
+      gap: rem(40);
+      @media (min-width:$mobile){
+         grid-template-columns: 1fr 1fr;
+      }
+   }
+}
+
+.timeline {
+   display: grid;
+   gap: rem(64);
+   position: relative;
+   &::before{
+      content:'';
+      position: absolute;
+      left: rem(12);
+      top: em(2.5, 16);
+      height: 100%;
+      width: 1px;
+      background-color: #f1f1f1;
+   }
+
+   &__item {
+      position: relative;
+      padding-left: rem(40);
+      &::before{
+         content:'';
+         position: absolute;
+         top: em(2.5, 16);
+         left: rem(4);
+         width: rem(16);
+         height: rem(16);
+         border-radius: 50%;
+         background-color: #f1f1f1;
+         z-index: 3;
+      }
+      &:last-child{
+         &::after{
+            content:'';
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            left: rem(12);
+            bottom: 0;
+            background-color: #fff;
+            z-index: 2;
+         }
+      }
+   }
+
+   &__title {
+      line-height: math.div(20, 16);
+      font-weight: 500;
+      &:not(:last-child) {
+         margin-bottom: rem(10);
+      }
+   }
+
+   &__text {
+      font-size: rem(14);
+      line-height: math.div(17, 14);
+      &:not(:last-child) {
+         margin-bottom: rem(24);
+      }
+   }
+
+   &__date {
+      font-weight: 500;
+      line-height: math.div(17, 16);
+   }
+}
+
+.content-skills {
+
+   &__text {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 64, 20);
+      }
+   }
+
+   &__items {
+      display: grid;
+      @include adaptiveValue("gap", 40, 20);
+   }
+
+   &__label {
+      font-weight: 500;
+      line-height: math.div(17, 16);
+      &:not(:last-child) {
+         margin-bottom: rem(16);
+      }
+   }
+
+   &__line {
+      background: #F5F3FE;
+      border-radius: rem(2);
+      height: rem(8);
+      position: relative;
+      span {
+         position: absolute;
+         height: 100%;
+         top: 0;
+         left: 0;
+         border-radius: rem(2);
+         background-color: $purpleColor;
+      }
+   }
+}
+
+//====================================================================================================
