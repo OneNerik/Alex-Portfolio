@@ -628,8 +628,8 @@
    &__body {
       display: grid;
       gap: rem(40);
-      @media (min-width:$mobile){
-         grid-template-columns: 1fr 1fr;
+      @media (min-width: em(850)){
+         grid-template-columns: 1fr percent(658, 1200);
       }
    }
 }
@@ -736,3 +736,116 @@
 }
 
 //====================================================================================================
+
+.contacts {
+   background: #FBFBFB;
+   &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: rem(80);
+      padding-bottom: rem(30);
+   }
+
+   &__content {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+   }
+
+   &__form {}
+
+   &__body {
+      @include adaptiveValue("padding-left", 105, 20);
+   }
+
+   &__list {}
+}
+
+.form {
+   display: grid;
+   gap: rem(16);
+   &__item {
+      &:last-child {
+         padding-top: rem(22);
+      }
+   }
+
+   &__input {
+      width: 100%;
+      height: rem(48);
+      border-radius: rem(8);
+      padding: rem(0) rem(24);
+      background-color: #fff;
+      &::placeholder {
+         color: $greycolor;
+      }
+      &:focus {
+         &::placeholder {
+            color: $mainColor;
+         }
+      }
+   }
+
+   &__button {
+      background-color: $purpleColor;
+      padding: rem(16);
+      color: #fff;
+      width: 100%;
+      border-radius: rem(8);
+      transition: background-color 0.3s ease 0s;
+      &:hover{
+         background-color: #5e53d6;
+      }
+   }
+
+   &__error {
+      padding: rem(5) rem(24) rem(0) rem(24);
+      color: red;
+      font-size: rem(12);
+   }
+
+}
+
+textarea.form__input {
+   height: rem(190);
+   resize: vertical;
+}
+
+.list-contacts {
+   display: grid;
+   @include adaptiveValue("gap", 48, 20);
+   &__item {
+      display: flex;
+      align-items: center;
+      gap: rem(24);
+   }
+
+   &__icon {
+      flex: 0 0 rem(56);
+      height: rem(56);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f5f3fe;
+      border-radius: rem(16);
+   }
+
+   &__body {}
+
+   &__title {
+      font-weight: 500;
+      &:not(:last-child) {
+         margin-bottom: rem(4);
+      }
+   }
+
+   &__text {
+      font-size: rem(14);
+      line-height: math.div(24, 14);
+      transition: color 0.3s ease 0s;
+      &:hover {
+         color: $purpleColor;
+      }
+   }
+}
